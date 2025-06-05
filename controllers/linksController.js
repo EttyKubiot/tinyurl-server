@@ -62,11 +62,11 @@ export const redirectLink = async (req, res) => {
     const targetParamName = link.targetParamName || 't';
     const targetParamValue = req.query[targetParamName] || '';
     // Prevent duplicate clicks from same IP (optional)
-    const alreadyClicked = link.clicks.some(click => click.ipAddress === ip);
-    if (!alreadyClicked) {
+    // const alreadyClicked = link.clicks.some(click => click.ipAddress === ip);
+    // if (!alreadyClicked) {
         link.clicks.push({ insertedAt: new Date(), ipAddress: ip, targetParamValue });
         await link.save();
-    }
+    // }
     // Redirect
     res.redirect(link.originalUrl);
 };

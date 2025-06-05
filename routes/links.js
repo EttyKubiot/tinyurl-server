@@ -1,5 +1,5 @@
 import express from 'express';
-import { getLinks, createLink, updateLink, deleteLink, redirectLink, getLinkById } from '../controllers/linksController.js';
+import { getLinks, createLink, updateLink, deleteLink, redirectLink, getLinkById, clicksByTarget } from '../controllers/linksController.js';
 
 const router = express.Router();
 

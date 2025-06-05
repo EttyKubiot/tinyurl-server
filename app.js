@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import linksRouter from './routes/links.js';
 import usersRouter from './routes/users.js';
@@ -8,6 +9,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Routers
 app.use('/api/links', linksRouter);

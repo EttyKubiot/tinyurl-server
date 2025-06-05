@@ -1,5 +1,6 @@
 import User from '../models/user.js';
 import Link from '../models/link.js';
+import mongoose from 'mongoose';
 
 // Get all users
 export const getUsers = async (req, res) => {
